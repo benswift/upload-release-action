@@ -15,7 +15,9 @@ You must provide:
 
 Optional Arguments
 
- - `file_glob`: If set to true, the file argument can be a glob pattern (`asset_name` is ignored in this case)
+- `name`: The name of the release (if not provided, GitHub will default to using the first line of commit message associated with `HEAD`)
+- `body`: The body text (i.e. description) for the release (to be shown in the GitHub Releases web view)
+- `file_glob`: If set to true, the file argument can be a glob pattern (`asset_name` is ignored in this case)
 
 ## Usage
 
@@ -51,6 +53,10 @@ jobs:
         file: target/release/mything
         asset_name: mything
         tag: ${{ github.ref }}
+		name: Release ${{ github.ref }}
+		body: |-
+		  A new release for this awesome project. See <https://example.com> for more
+          information on how to get started.
         overwrite: true
 ```
 
