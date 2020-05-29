@@ -53,9 +53,9 @@ jobs:
         file: target/release/mything
         asset_name: mything
         tag: ${{ github.ref }}
-		name: Release ${{ github.ref }}
-		body: |-
-		  A new release for this awesome project. See <https://example.com> for more
+        name: Release ${{ github.ref }}
+        body: |-
+          A new release for this awesome project. See <https://example.com> for more
           information on how to get started.
         overwrite: true
 ```
